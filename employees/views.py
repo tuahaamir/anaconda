@@ -16,7 +16,7 @@ def hello(request):
 
 
 def absent(request):
-    absents = models.Attendance.objects.filter(month=4, day=1).all()
+    absents = models.Attendance.objects.filter(employee=4).all()
     return HttpResponse(absents)
 
 

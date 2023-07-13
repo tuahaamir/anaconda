@@ -25,7 +25,7 @@ class Employee(models.Model):
     leaves = models.IntegerField(default=18)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
-    # skills = models.ManyToManyField(Skills, through='EmployeesSkills', related_name='employees', blank=True)
+    skills = models.ManyToManyField(Skills, through='EmployeeSkills', related_name='employees', blank=True)
     
     def __str__(self):
         return self.first_name + " " + self.last_name
@@ -33,14 +33,13 @@ class Employee(models.Model):
     class Meta:
         db_table = "employees"
         
-# # Custom employees_skills Table columns
-# class EmployeesSkills(models.Model):
-#     id = models.IntegerField(primary_key=True)
-#     a = models.ForeignKey(Employee, db_column='employee_id', on_delete=models.CASCADE)
-#     b = models.ForeignKey(Skills, db_column='skill_id', on_delete=models.CASCADE)
+# Custom employees_skills Table columns
+class EmployeeSkills(models.Model):
+    employee = models.ForeignKey(Employee, db_column='employee_id', on_delete=models.CASCADE)
+    skill = models.ForeignKey(Skills, db_column='skill_id', on_delete=models.CASCADE)
     
-#     class Meta:
-#         db_table = "employees_skills"
+    class Meta:
+        db_table = "employee_skills"
         
 class EmployeeDetails(models.Model):
     JOB_STATUS_CHOICES = [

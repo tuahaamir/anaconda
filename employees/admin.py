@@ -28,6 +28,7 @@ class AttendanceInline(admin.TabularInline):
 
 @admin.register(models.Employee)
 class EmployeeAdmin(admin.ModelAdmin):
+    readonly_fields = ["id"]
     def get_inline_instances(self, request, obj=None):
         user_id = obj.id
         inline_instances = []
@@ -69,3 +70,7 @@ class AttendanceAdmin(admin.ModelAdmin):
 # @admin.register(models.Attendance)
 # class AttendanceAdmin(admin.ModelAdmin):
 #     pass
+
+@admin.register(models.EmployeeSkills)
+class EmployeeSkillsAdmin(admin.ModelAdmin):
+    pass
