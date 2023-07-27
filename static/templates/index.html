@@ -1,13 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="zxx">
 
 <head>
@@ -34,12 +27,12 @@
   <link rel="stylesheet" href="{% static 'plugins/card-slider/css/style.css' %}">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" >
+  <link rel="stylesheet" type="text/css" href=" {% static '/css/style.css' %} ">
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+  
 </head>
 
 <body>
@@ -92,11 +85,11 @@
 
 <!-- banner -->
 <section class="banner bg-cover position-relative d-flex justify-content-center align-items-center"
-  data-background="images/banner/banner2.jpg">
+  data-background="{% static 'images/banner/banner2.jpg' %}">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">Creative Agency</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Bit & Bytes Inc.</h1>
       </div>
     </div>
   </div>
@@ -276,7 +269,7 @@
 <!-- /team -->
 
 <!-- about -->
-<section class="section-lg position-relative bg-cover" data-background="images/backgrounds/about-bg.jpg">
+<section class="section-lg position-relative bg-cover" data-background="{% static 'images/backgrounds/about-bg' %}.jpg">
   <img src="{% static 'images/backgrounds/about-bg-overlay.png' %}" alt="overlay" class="overlay-image img-fluid">
   <div class="container">
     <div class="row justify-content-between">
@@ -361,7 +354,7 @@
 
 <!-- call to action -->
 <section>
-  <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
+  <div class="container section-sm overlay-secondary-half bg-cover" data-background="{% static 'images/backgrounds/cta-bg' %}.jpg">
   <div class="row">
     <div class="col-lg-8 offset-lg-1">
       <h2 class="text-gradient-primary">Let's Start With Us!</h2>
