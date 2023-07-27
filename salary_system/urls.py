@@ -24,5 +24,6 @@ admin.site.index_title = "My Admin Panel"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('front/', include('employees.urls'))
+    path('front/', include('employees.urls')),
+    path('', include('frontend.urls'))
 ]
